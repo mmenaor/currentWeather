@@ -1,38 +1,148 @@
+html * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  background: url("https://media.giphy.com/media/l41lQIclE3lItAlfq/giphy.gif") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  background-size: 100% 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainContainer {
+  background-color: #3d3d3d88;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: auto;
+  margin: auto;
+  padding: 25px;
+  padding-right: 40px;
+  gap: 20px;
+  border-radius: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.mainContainer > h1 {
+  color: #b559c7;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dataContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.imageContainer > h3 {
+  position: absolute;
+  top: 20px;
+  font-size: 25px;
+}
+
+.imageContainer > p {
+  position: absolute;
+  bottom: 20px;
+  font-size: 20px;
+}
+
+.imageContainer > img {
+  width: 250px;
+}
+
+.listContainer {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+  justify-content: space-around;;
+}
+
+.listContainer > li > * {
+  display: inline-block;
+}
+
+.listContainer > li > i {
+  width: 30px;
+}
+
+/* BUTTON */
+.button-48 {
+  appearance: none;
+  background-color: #555658ea;
+  border-width: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 1.5em 2.2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  border-radius: 10px;
+}
+
+.button-48:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #b559c7;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+  border-radius: 10px;
+}
+
+.button-48:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+  border-radius: 10px;
+}
+
+.button-48:after {
+  background-color: #b559c7;
+  border-radius: 10px;
+}
+
+.button-48 span {
+  z-index: 1;
+  position: relative;
+}
+
+.button-48 > .text {
+  color: #ffffff;
 }
